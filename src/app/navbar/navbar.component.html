@@ -1,0 +1,9 @@
+<nav>
+    <h1 routerLink="/">Laundry Management Application</h1>
+    <ul>
+      <li><a routerLink="/login"  *ngIf="userEmail=='' || userEmail==null  ">Login</a></li>
+      <li><a  routerLink="/profile" *ngIf="userEmail!='' && userEmail!= null " >Profile</a></li>
+      <li><a routerLink="/placeOrder">Request Order</a></li>
+      <li><a routerLink="/showOrderStatus">Order Status</a></li>
+    </ul>
+  </nav>

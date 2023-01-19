@@ -1,0 +1,46 @@
+<h1 class=" text-center">
+    Place Your Order
+</h1>
+<div class="container">
+    <form [formGroup]="placeOrderRef" (submit)="placeOrder()">
+        
+        <div class="form-group">
+            <label for="pickupdate">Pickup Date</label>
+            <input type="date" class="form-control" id="pickupdate"
+                placeholder="Enter Pickup Date" name="pickupdate" formControlName="pickupDate" [min]="todaysDate">
+        </div>
+        <div class="form-group">
+            <label for="topWearQuantity">TopWear(Tshirt,Top,Shirt)</label>
+            <input type="number" class="form-control" id="topWear" min="0"
+                placeholder="Enter Your Quantity" name="topWearQuantity" formControlName="topWear">
+        </div>
+        <div class="form-group">
+            <label for="bottomWearQuantity">BottomWear(Lower,Jeans,Leggins)</label>
+            <input type="number" class="form-control" id="bottomWear" min="0"
+                placeholder="Enter Your Quantity" name="bottomWearQuantity" formControlName="bottomWear">
+        </div>
+        <div class="form-group">
+            <label for="woolenClothQuantity">Woolen cloths</label>
+            <input type="number" class="form-control" id="woolenClothQuantity" min="0"
+                placeholder="Enter Your Quantity" name="woolenClothQuantity" formControlName="woolenCloth">
+        </div>
+        <div class="form-group">
+            <label for="othersQuantity">Others</label>
+            <input type="number" class="form-control" id="othersQuantity" min="0"
+                placeholder="Enter Your Quantity" name="othersQuantity" formControlName="others">
+        </div>
+        <div class="form-group">
+            <label for="contactPerson">Contact Person</label>
+            <textarea class="form-control" id="contactPerson"
+                placeholder="Contact Person Details" name="contactPerson" formControlName="contactPerson"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description"
+                placeholder="Description" name="description" formControlName="description"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="placeOrderRef.invalid">
+            Submit
+        </button>
+    </form>
+</div>
